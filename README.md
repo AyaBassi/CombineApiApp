@@ -54,6 +54,14 @@ Classes are not fully thread-safe, whereas structure is always thread-safe or si
 
 5.    How do you write tests
 
+You can write test cases by importing the XCTest Frame work which is created and supported by apple. Then you can create a class and inheriting from XCTestCase class. You then need to create functions that do testing and the function name needs to start with "test". 
+There are two functions that you can use to help your code and that is "override setUpWithError()throws {}".  This function is called before each test function is called. The other function is called "override func tearDownWithError() throws {}" and this function is called after each test method is returned. First funtion is usually used to initialise required instances and the second function is used to clean up the instances. 
+You can also get access to your main project by importing your porject through "@testable import YourProjectName". 
+There are three main ways of testing API calling functionalities. Faking, mocking, and stubbing. These ways are used to avoid actual outside your machine api calls. The purpose is to mainly test the functionalities that you use for checking correctness of decoding data, error handling accuracies and so on.
+
+You can also test your logic in view model. 
+Having dependency inversion, with dependency injection can help to implement testing easier.
+
 
 6.    Different App States
 Apple has defined 5 execution states
